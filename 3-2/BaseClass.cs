@@ -6,7 +6,7 @@ namespace _3_2
 {
     abstract class BaseClass
     {
-        public bool flag1 { get; set; }
+        public bool flag1 { get;  private set; }
         protected BaseClass(bool flag)
         {
             flag1 = flag;
