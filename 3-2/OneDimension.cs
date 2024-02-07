@@ -6,14 +6,14 @@ namespace _3_2
 {
     
     
-        sealed class Odnomer : Obschiy
+        sealed class OneDimension : BaseClass
         {
-            
-            
-            
-            public Odnomer(bool Flag, int Length) : base(Flag, Length)
+            private static Random rd = new Random();
+            private int[] array;
+
+            public OneDimension(bool Flag, int Length) : base(Flag)
             {
-                array = new int[base.length1];
+                array = new int[Length];
                 if (base.flag1)
                 {
                     UserFill();
@@ -22,10 +22,7 @@ namespace _3_2
                 {
                     RndFill();
                 }
-                
             }
-            private int[] array;
-
 
             public override void Mid()
             {
@@ -34,7 +31,7 @@ namespace _3_2
                 {
                     sum += array[i];
                 }
-                Console.WriteLine("Среднее значение");
+                Console.WriteLine("Среднее значение одномерных");
                 Console.WriteLine(sum / array.Length);
             }
 
@@ -43,7 +40,7 @@ namespace _3_2
             {
                 string final;
                 final = string.Join(" ", array);
-                Console.WriteLine("весь массив");
+                Console.WriteLine("весь массив одномерных");
                 Console.WriteLine(final);
             }
 
@@ -61,7 +58,6 @@ namespace _3_2
 
             private void RndFill()
             {
-                Random rd = new Random();
                 for (int i = 0; i < array.Length; i++)
                 {
                     array[i] = rd.Next(-100, 101);

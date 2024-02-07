@@ -4,11 +4,14 @@ using System.Text;
 
 namespace _3_2
 {
-    sealed class Stupen : Obschiy
+    sealed class StepDimensions : BaseClass
     {
-        public Stupen(bool Flag, int Length) : base(Flag, Length)
+        private static Random rd = new Random();
+
+        private int[][] array;
+        public StepDimensions(bool Flag, int Length) : base(Flag)
         {
-            array = new int[base.length1][];
+            array = new int[Length][];
             if (base.flag1)
             {
                 UserFill();
@@ -19,10 +22,9 @@ namespace _3_2
             }
 
         }
-        private int[][] array;
+        
         private void UserFill()
         {
-
             for (int i = 0; i < array.Length; i++)
             {
                 Console.WriteLine("Введите кол во элементов в строке ступенчатых");
@@ -39,13 +41,12 @@ namespace _3_2
 
         private void RndFill()
         {
-            Random rd = new Random();
             for (int i = 0; i < array.Length; i++)
             {
                 Console.WriteLine("Введите кол во элементов в строке ступенчатых");
                 int kol = int.Parse(Console.ReadLine());
                 array[i] = new int[kol];
-                for (int j = 0; j < kol; j++)
+                for (int j = 0; j < array[i].Length; j++)
                 {
                     array[i][j] = rd.Next(-100, 101);
                 }
@@ -62,25 +63,20 @@ namespace _3_2
                     sum += array[i][j];
                     kol += 1;
                 }
-                
             }
-            Console.WriteLine("Среднее значение");
+            Console.WriteLine("Среднее значение ступенчатых");
             Console.WriteLine(sum / kol);
         }
 
 
         public override void Print()
         {
-            Console.WriteLine("весь массив");
+            Console.WriteLine("весь массив ступенчатых");
             for (int i=0; i < array.Length; i++)
             {
-                string final = "";
-                final = string.Join(" ", array[i]);
+                string final = string.Join(" ", array[i]);
                 Console.WriteLine(final);
-            }
-            
-            
-            
+            }  
         }
     }
 }

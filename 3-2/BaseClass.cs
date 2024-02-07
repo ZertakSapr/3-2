@@ -4,13 +4,11 @@ using System.Text;
 
 namespace _3_2
 {
-    abstract class Obschiy
+    abstract class BaseClass
     {
-        public int length1 { get; set; }
         public bool flag1 { get; set; }
-        protected Obschiy(bool flag, int length)
+        protected BaseClass(bool flag)
         {
-            length1 = length;
             flag1 = flag;
         }
         public abstract void Mid();
