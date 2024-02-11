@@ -6,12 +6,23 @@ namespace _3_2
 {
     abstract class BaseClass
     {
-        public bool flag1 { get;  private set; }
+
         protected BaseClass(bool flag)
         {
-            flag1 = flag;
+            if (flag)
+            {
+                UserFill();
+
+            }
+            else
+            {
+                RndFill();
+            }
         }
-        public abstract void Mid();
+        public abstract int Mid();
         public abstract void Print();
+
+        protected abstract void UserFill();
+        protected abstract void RndFill();
     }
 }

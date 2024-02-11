@@ -28,8 +28,13 @@ namespace _3_2
             mass[2] = new StepDimensions(flagst, countst);
             for(int i=0; i<mass.Length; i++)
             {
+                if (i == 0)
+                {
+                    Console.WriteLine("Весь массив одномерных");
+                    Console.WriteLine("Среднее значение одномерных");
+                }
                 mass[i].Print();
-                mass[i].Mid();
+                Console.WriteLine(mass[i].Mid());
             }
         }
     }

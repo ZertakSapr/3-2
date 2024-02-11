@@ -6,66 +6,48 @@ namespace _3_2
 {
     sealed class StepDimensions : BaseClass
     {
-        private static Random rd = new Random();
 
-        private int[][] array;
+        OneDimension[] array;
         public StepDimensions(bool Flag, int Length) : base(Flag)
         {
-            array = new int[Length][];
-            if (base.flag1)
-            {
-                UserFill();
-            }
-            else
-            {
-                RndFill();
-            }
+            array = new OneDimension[Length];
+            
 
         }
-        
-        private void UserFill()
+
+        protected override void UserFill()
         {
             for (int i = 0; i < array.Length; i++)
             {
                 Console.WriteLine("Введите кол во элементов в строке ступенчатых");
-                int kol = int.Parse(Console.ReadLine());
-                array[i] = new int[kol];
-                for (int j = 0; j < kol; j++)
-                {
-                    Console.WriteLine("Введите элемент");
-                    array[i][j] = int.Parse(Console.ReadLine());
-                }
+                int length = int.Parse(Console.ReadLine());
+                array[i] = new OneDimension(true,length);
+                
+                
             }   
         }
 
 
-        private void RndFill()
+        protected override void RndFill()
         {
             for (int i = 0; i < array.Length; i++)
             {
                 Console.WriteLine("Введите кол во элементов в строке ступенчатых");
-                int kol = int.Parse(Console.ReadLine());
-                array[i] = new int[kol];
-                for (int j = 0; j < array[i].Length; j++)
-                {
-                    array[i][j] = rd.Next(-100, 101);
-                }
+                int length = int.Parse(Console.ReadLine());
+                array[i] = new OneDimension(false, length);
+                
             }
         }
-        public override void Mid()
+        public override int Mid()
         {
             int sum = 0;
-            int kol=0;
             for (int i = 0; i < array.Length; i++)
             {
-                for(int j=0; j<array[i].Length; j++)
-                {
-                    sum += array[i][j];
-                    kol += 1;
-                }
+                sum += array[i].Mid();
             }
             Console.WriteLine("Среднее значение ступенчатых");
-            Console.WriteLine(sum / kol);
+            return sum / array.Length;
+           
         }
 
 
@@ -74,8 +56,8 @@ namespace _3_2
             Console.WriteLine("весь массив ступенчатых");
             for (int i=0; i < array.Length; i++)
             {
-                string final = string.Join(" ", array[i]);
-                Console.WriteLine(final);
+                array[i].Print();
+                
             }  
         }
     }

@@ -12,18 +12,11 @@ namespace _3_2
         public TwoDimensions(bool Flag, int RowCount, int CountColumn) : base(Flag)
         {
             array = new int[RowCount,CountColumn];
-            if (base.flag1)
-            {
-                UserFill();
-            }
-            else
-            {
-                RndFill();
-            }
+            
 
         }
 
-        private void UserFill()
+        protected override void UserFill()
         {
             for (int i = 0; i < array.GetLength(0); i++)
             {
@@ -36,7 +29,7 @@ namespace _3_2
         }
 
 
-        private void RndFill()
+        protected override void RndFill()
         {
             for (int i = 0; i < array.GetLength(0); i++)
             {
@@ -47,7 +40,7 @@ namespace _3_2
             }
         }
 
-        public override void Mid()
+        public override int Mid()
         {
             int sum = 0;
             for (int i = 0; i < array.GetLength(0); i++)
@@ -58,7 +51,8 @@ namespace _3_2
                 }
             }
             Console.WriteLine("Среднее значение двумерных");
-            Console.WriteLine(sum / (array.GetLength(0)*array.GetLength(1)));
+            return sum / (array.Length);
+            
         }
 
         public override void Print()
