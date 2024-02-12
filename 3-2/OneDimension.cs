@@ -15,6 +15,7 @@ namespace _3_2
         {
             array = new int[Length];
 
+            base.TypeOfInizialization();
         }
 
         public override int Mid()
@@ -27,10 +28,12 @@ namespace _3_2
             return sum / array.Length;
         }
 
-
-        
-
-
+        public void Recreate(int Lentgh, bool Flag)
+        {
+            array = new int[Lentgh];
+            base.flag = Flag;
+            base.TypeOfInizialization();
+        }
 
         public override void Print()
         {

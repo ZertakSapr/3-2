@@ -12,7 +12,7 @@ namespace _3_2
         public TwoDimensions(bool Flag, int RowCount, int CountColumn) : base(Flag)
         {
             array = new int[RowCount,CountColumn];
-            
+            base.TypeOfInizialization();
 
         }
 
@@ -53,6 +53,13 @@ namespace _3_2
             Console.WriteLine("Среднее значение двумерных");
             return sum / (array.Length);
             
+        }
+
+        public void Recreate(int ColumnCount, int RowCount, bool Flag)
+        {
+            array = new int[RowCount,ColumnCount];
+            base.flag = Flag;
+            base.TypeOfInizialization();
         }
 
         public override void Print()

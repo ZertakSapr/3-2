@@ -11,9 +11,10 @@ namespace _3_2
         public StepDimensions(bool Flag, int Length) : base(Flag)
         {
             array = new OneDimension[Length];
-            
+            base.TypeOfInizialization();
 
         }
+
 
         protected override void UserFill()
         {
@@ -38,6 +39,13 @@ namespace _3_2
                 
             }
         }
+        public void Recreate(int Lentgh, bool Flag)
+        {
+            array = new OneDimension[Lentgh];
+            base.flag = Flag;
+            base.TypeOfInizialization();
+        }
+
         public override int Mid()
         {
             int sum = 0;
@@ -56,8 +64,7 @@ namespace _3_2
             Console.WriteLine("весь массив ступенчатых");
             for (int i=0; i < array.Length; i++)
             {
-                array[i].Print();
-                
+                array[i].Print();  
             }  
         }
     }

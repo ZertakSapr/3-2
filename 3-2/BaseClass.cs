@@ -6,8 +6,20 @@ namespace _3_2
 {
     abstract class BaseClass
     {
+        public bool flag { get; set; }
 
-        protected BaseClass(bool flag)
+        protected BaseClass(bool Flag)
+        {
+            flag = Flag;
+        }
+        public abstract int Mid();
+        public abstract void Print();
+
+        protected abstract void UserFill();
+        protected abstract void RndFill();
+
+
+        protected void TypeOfInizialization()
         {
             if (flag)
             {
@@ -19,10 +31,5 @@ namespace _3_2
                 RndFill();
             }
         }
-        public abstract int Mid();
-        public abstract void Print();
-
-        protected abstract void UserFill();
-        protected abstract void RndFill();
     }
 }
