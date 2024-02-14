@@ -7,11 +7,15 @@ namespace _3_2
     sealed class TwoDimensions : BaseClass
     {
         private int[,] array;
-
+        
         static private Random rnd = new Random();
-        public TwoDimensions(bool Flag, int RowCount, int CountColumn) : base(Flag)
+        public TwoDimensions(bool Flag, int RowCount, int CountColumn)
         {
             array = new int[RowCount,CountColumn];
+            if (Flag)
+            {
+                base.flag = true;
+            }
             base.TypeOfInizialization();
 
         }

@@ -11,10 +11,13 @@ namespace _3_2
         private static Random rd = new Random();
         private int[] array;
 
-        public OneDimension(bool Flag, int Length) : base(Flag)
+        public OneDimension(bool Flag, int Length)
         {
             array = new int[Length];
-
+            if (Flag)
+            {
+                base.flag = true;
+            }
             base.TypeOfInizialization();
         }
 

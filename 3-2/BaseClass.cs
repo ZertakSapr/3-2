@@ -8,9 +8,9 @@ namespace _3_2
     {
         public bool flag { get; set; }
 
-        protected BaseClass(bool Flag)
+        protected BaseClass()
         {
-            flag = Flag;
+            flag = false;
         }
         public abstract int Mid();
         public abstract void Print();

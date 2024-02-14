@@ -8,9 +8,13 @@ namespace _3_2
     {
 
         OneDimension[] array;
-        public StepDimensions(bool Flag, int Length) : base(Flag)
+        public StepDimensions(bool Flag, int Length)
         {
             array = new OneDimension[Length];
+            if (Flag)
+            {
+                base.flag = true;
+            }
             base.TypeOfInizialization();
 
         }
