@@ -9,13 +9,10 @@ namespace _3_2
         private int[,] array;
         
         static private Random rnd = new Random();
-        public TwoDimensions(bool Flag, int RowCount, int CountColumn)
+        public TwoDimensions(int RowCount, int CountColumn, bool Flag=false): base(Flag)
         {
             array = new int[RowCount,CountColumn];
-            if (Flag)
-            {
-                base.flag = true;
-            }
+
             base.TypeOfInizialization();
 
         }

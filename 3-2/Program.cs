@@ -11,7 +11,15 @@ namespace _3_2
             bool flagone = bool.Parse(Console.ReadLine());
             Console.WriteLine("Какое кол-во злементов вы хотите в одномерном масииве");
             int count = int.Parse(Console.ReadLine());
-            mass[0] = new OneDimension(flagone, count);
+            if (flagone)
+            {
+                mass[0] = new OneDimension( count, flagone);
+            }
+            else
+            {
+                mass[0] = new OneDimension( count);
+            }
+           
 
             Console.WriteLine("Как вы хотите заполянть массив двумерных");
             bool flagtwo = bool.Parse(Console.ReadLine());
@@ -19,13 +27,30 @@ namespace _3_2
             int counttwo = int.Parse(Console.ReadLine());
             Console.WriteLine("Какое кол-во столбцов вы хотите в двумерном масииве");
             int counttwoс = int.Parse(Console.ReadLine());
-            mass[1] = new TwoDimensions(flagtwo, counttwo,counttwoс);
+            
+            if (flagtwo)
+            {
+                mass[1] = new TwoDimensions( counttwo, counttwoс, flagtwo);
+            }
+            else
+            {
+                mass[1] = new TwoDimensions( counttwo, counttwoс);
+            }
 
             Console.WriteLine("Как вы хотите заполянть массив ступенчатых");
             bool flagst = bool.Parse(Console.ReadLine());
             Console.WriteLine("Каок кол-во строк вы хотите в ступенчатом масииве");
             int countst = int.Parse(Console.ReadLine());
-            mass[2] = new StepDimensions(flagst, countst);
+
+            if (flagst)
+            {
+                mass[2] = new StepDimensions( countst, flagst);
+            }
+            else
+            {
+                mass[2] = new StepDimensions( countst);
+            }
+            
             for(int i=0; i<mass.Length; i++)
             {
                 if (i == 0)

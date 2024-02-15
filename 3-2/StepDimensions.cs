@@ -8,15 +8,10 @@ namespace _3_2
     {
 
         OneDimension[] array;
-        public StepDimensions(bool Flag, int Length)
+        public StepDimensions(int Length, bool Flag=false):base(Flag)
         {
             array = new OneDimension[Length];
-            if (Flag)
-            {
-                base.flag = true;
-            }
             base.TypeOfInizialization();
-
         }
 
 
@@ -26,7 +21,7 @@ namespace _3_2
             {
                 Console.WriteLine("Введите кол во элементов в строке ступенчатых");
                 int length = int.Parse(Console.ReadLine());
-                array[i] = new OneDimension(true,length);
+                array[i] = new OneDimension(length,true);
                 
                 
             }   
@@ -39,7 +34,7 @@ namespace _3_2
             {
                 Console.WriteLine("Введите кол во элементов в строке ступенчатых");
                 int length = int.Parse(Console.ReadLine());
-                array[i] = new OneDimension(false, length);
+                array[i] = new OneDimension(length);
                 
             }
         }
